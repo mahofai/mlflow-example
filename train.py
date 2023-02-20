@@ -28,10 +28,6 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
 
-    tracking_uri = "http://localhost:5000"
-    mlflow.set_tracking_uri(tracking_uri)
-    print(mlflow.get_tracking_uri())
-
     # Read the wine-quality csv file (make sure you're running this from the root of MLflow!)
     wine_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wine-quality.csv")
     data = pd.read_csv(wine_path)
@@ -49,6 +45,11 @@ if __name__ == "__main__":
     l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
     with mlflow.start_run():
+
+        tracking_uri = "http://localhost:5001"
+        mlflow.set_tracking_uri(tracking_uri)
+        print(mlflow.get_tracking_uri())
+
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
         lr.fit(train_x, train_y)
 
