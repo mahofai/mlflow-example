@@ -28,7 +28,7 @@ if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
 
-    tracking_uri = "http://localhost:5001"
+    tracking_uri = "http://localhost:5000"
     mlflow.set_tracking_uri(tracking_uri)
     print(mlflow.get_tracking_uri())
 
