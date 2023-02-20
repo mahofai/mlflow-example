@@ -62,6 +62,8 @@ if __name__ == "__main__":
         mlflow.log_metric("rmse", rmse)
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
+        tracking_uri = "http://localhost:5001"
+        mlflow.set_tracking_uri(tracking_uri)
 
         print(mlflow.get_tracking_uri())
 
