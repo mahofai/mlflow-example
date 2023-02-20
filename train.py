@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     with mlflow.start_run():
 
-        tracking_uri = "http://localhost:5001"
+        tracking_uri = "http://172.16.20.100:5001"
         mlflow.set_tracking_uri(tracking_uri)
         print(mlflow.get_tracking_uri())
 
