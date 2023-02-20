@@ -63,4 +63,6 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
 
+        print(mlflow.get_tracking_uri())
+
         mlflow.sklearn.log_model(lr, "model")
