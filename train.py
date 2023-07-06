@@ -46,8 +46,6 @@ if __name__ == "__main__":
 
     with mlflow.start_run():
 
-        tracking_uri = "http://127.0.0.1:5001"
-        mlflow.set_tracking_uri(tracking_uri)
         print(mlflow.get_tracking_uri())
 
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
